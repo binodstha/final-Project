@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import { Route, Routes, Navigate, useLocation } from 'react-router';
+import {
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+  useLocation,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
+import "./App.css";
+// import AppRoutes from './routes';
+
+import Dashboard from "./pages/dashboard";
+// import Admin from './pages/admin';
+// import Category from './pages/admin/category';
+// import Geolocation from './pages/admin/geolocation';
+// import Login from "./pages/admin/auth/login";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>asdfsfdsd
+
+    </>
   );
 }
 

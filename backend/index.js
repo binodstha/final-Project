@@ -1,6 +1,7 @@
 import express from "express";
 import mysql from "mysql";
 import cors from "cors";
+import bcrypt from "bcrypt";
 
 const app = express();
 app.use(cors());
@@ -10,7 +11,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root",
-  database: "test",
+  database: "gmar",
 });
 
 app.get("/", (req, res) => {
@@ -19,12 +20,61 @@ app.get("/", (req, res) => {
 
 app.get("/books", (req, res) => {
   const q = "SELECT * FROM books";
+
+  const passw1 = "test1";
+  const passw2 = "test2";
+  let hashPwd = bcrypt.hashSync(passw1, 12);
+
+  console.log(hashPwd);
+
+  bcrypt.compare(passw1, hashPwd, function (err, result) {
+    console.log(err, result);
+  });
+
+  bcrypt.compareSync;
+
+  // bcrypt.hash(passw1, 12, function (err, hash) {
+  //   hashPwd = hash
+  // });
+  console.log(hashPwd);
   db.query(q, (err, data) => {
-    console.log(err)
+    console.log(err);
     if (err) {
       console.log(err);
       return res.json(err);
     }
+    return res.json(data);
+  });
+});
+
+app.post("/admin/auth/sign-in", (req, res) => {
+  console.log(req)
+  const query =
+    "SELECT * FROM user WHERE username = ? ";
+
+  const values = [req.body.username];
+
+  db.query(query, [values], (err, data) => {
+    if (err) return res.send(err);
+    return res.json(data);
+  });
+});
+
+app.post("/admin/auth/sign-up", (req, res) => {
+  const query =
+    "INSERT INTO user(`username`, `email`, `firstname`, `lastname`, password) VALUES (?)";
+  const hashPassword = bcrypt.hashSync(req.body.password);
+
+  const values = [
+    req.body.username,
+    req.body.email,
+    req.body.firstname,
+    req.body.lastname,
+    hashPassword,
+  ];
+
+  db.query(query, [values], (err, data) => {
+    if (err) return res.send(err);
     return res.json(data);
   });
 });
@@ -40,7 +90,7 @@ app.post("/books", (req, res) => {
   ];
 
   db.query(q, [values], (err, data) => {
-    console.log(err)
+    console.log(err);
     if (err) return res.send(err);
     return res.json(data);
   });
@@ -51,7 +101,6 @@ app.delete("/books/:id", (req, res) => {
   const q = "DELETE FROM books WHERE id = ? ";
 
   db.query(q, [bookId], (err, data) => {
-
     if (err) return res.send(err);
     return res.json(data);
   });
@@ -59,7 +108,8 @@ app.delete("/books/:id", (req, res) => {
 
 app.put("/books/:id", (req, res) => {
   const bookId = req.params.id;
-  const q = "UPDATE books SET `title`= ?, `desc`= ?, `price`= ?, `cover`= ? WHERE id = ?";
+  const q =
+    "UPDATE books SET `title`= ?, `desc`= ?, `price`= ?, `cover`= ? WHERE id = ?";
 
   const values = [
     req.body.title,
@@ -68,7 +118,7 @@ app.put("/books/:id", (req, res) => {
     req.body.cover,
   ];
 
-  db.query(q, [...values,bookId], (err, data) => {
+  db.query(q, [...values, bookId], (err, data) => {
     if (err) return res.send(err);
     return res.json(data);
   });
