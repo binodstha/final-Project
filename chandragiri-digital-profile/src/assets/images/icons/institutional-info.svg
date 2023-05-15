@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="74" height="72" viewBox="0 0 74 72">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3383" data-name="Rectangle 3383" width="54.393" height="54.38" fill="#5e84c3"/>
+    </clipPath>
+  </defs>
+  <g id="Group_14373" data-name="Group 14373" transform="translate(-1372 -892)">
+    <circle id="Ellipse_160" data-name="Ellipse 160" cx="34" cy="34" r="34" transform="translate(1372 892)" fill="#f5f5f5"/>
+    <g id="Group_14372" data-name="Group 14372" transform="translate(143 36)">
+      <g id="Group_14369" data-name="Group 14369" transform="translate(289 -430)">
+        <g id="Rectangle_3382" data-name="Rectangle 3382" transform="translate(950 1294)" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+          <rect width="64" height="64" stroke="none"/>
+          <rect x="0.5" y="0.5" width="63" height="63" fill="none"/>
+        </g>
+      </g>
+      <g id="Group_14368" data-name="Group 14368" transform="translate(1244 869.001)">
+        <g id="Group_14367" data-name="Group 14367" clip-path="url(#clip-path)">
+          <path id="Path_42155" data-name="Path 42155" d="M54.393,16.561a2.121,2.121,0,0,1-2.206,1.166Q27.211,17.7,2.235,17.714c-.142,0-.283,0-.425,0A1.653,1.653,0,0,1,.055,16.478,1.615,1.615,0,0,1,.993,14.6Q13.628,7.436,26.263.272a1.777,1.777,0,0,1,1.9.006Q40.77,7.43,53.373,14.586a5.445,5.445,0,0,1,1.02,1.019Z" transform="translate(0 0)" fill="#5e84c3"/>
+          <path id="Path_42156" data-name="Path 42156" d="M2.633,322.507c-.175-.073-.349-.148-.526-.218a3.174,3.174,0,0,1-2.019-2.916c-.008-1.257-.01-2.514,0-3.77a3.155,3.155,0,0,1,2.8-3.089,10,10,0,0,1,1.059-.05q23.254,0,46.508,0c2.353,0,3.116.5,4.006,2.609v4.887c-.133.3-.253.607-.4.9a3.572,3.572,0,0,1-2.147,1.65Z" transform="translate(-0.069 -268.128)" fill="#5e84c3"/>
+          <path id="Path_42157" data-name="Path 42157" d="M80.377,167.726H36.272V147.508H46.3v16.549H53.3V147.518H63.325v16.539h7.012V147.52h10.04Z" transform="translate(-31.125 -126.579)" fill="#5e84c3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

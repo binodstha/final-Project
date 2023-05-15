@@ -1,0 +1,50 @@
+@import "../../styles/App.scss";
+
+
+.require:after {
+  content: ' *';
+  color: #d00;
+}
+
+.complain-block {
+  .download-btn {
+    i {
+      font-size: 18px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .details {
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .badge {
+    font-size: $font-sm;
+    padding: 8px 18px;
+    border-radius: 3px;
+    font-weight: 400;
+    text-transform: capitalize;
+    &.bg-pending {
+      color: #f7a100;
+      background-color: #fef5e4 !important;
+    }
+    &.bg-reject {
+      color: #dc3545;
+      background-color: #dc35452e !important;
+    }
+    &.bg-approve {
+      color: #40cd6d;
+      background-color: #e9f9ef !important;
+    }
+  }
+}
+.msg {
+  color: #40cd6d;
+  &.error {
+    color: #dc3545;
+  }
+}

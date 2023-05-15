@@ -1,0 +1,129 @@
+table {
+    margin-bottom: 0 !important;
+}
+
+.table-responsive {
+    @include scrollbar;
+}
+
+.theme-table-wrap {
+    border: 1px solid #E4E4E4;
+    border-radius: $card-radius;
+    overflow: hidden;
+    position: relative;
+    .theme-table {
+        th, td {            
+            font-size: $font-base;
+            color: $font-color;
+            font-weight: 400;
+            border-bottom: 1px solid $border-color;
+        }
+        thead {
+            th {
+                white-space: nowrap;
+                padding: 13px 20px;
+            }
+        }        
+        tbody {
+            border: 0;
+            td {
+               border-bottom: 1px solid #f7f7f7;
+               vertical-align: middle;
+               padding: 6px 20px;
+            }
+            tr {
+                &:last-child {
+                    td {
+                        border-bottom: 0;
+                    }
+                }
+            }
+    
+        }
+        tfoot {
+            border-top: 0;
+            td {
+                border-top: 1px solid $border-color;
+                border-bottom: 0;
+            } 
+        }
+        .actions {
+            width: 250px;
+        }
+    }
+    
+}
+
+.pagination-wrap {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+        font-size: $font-base;
+        columns: $font-color;
+    }
+    .page-link {
+        color: $secondary;
+        border: 0;
+        font-size: $font-base;
+        border-radius: 2px;
+        padding: 2px 9px;
+        &:active,
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .page-item {
+        &.active {
+            .page-link {
+                background-color: $primary;
+                color: #fff;                
+            }
+        }
+    }
+}
+
+.table-striped {
+    thead {
+        th {
+            background-color: #F8F8F8;
+        }
+    }
+    tbody {
+        tr {
+            &:nth-of-type(even) {
+                td {
+                   background-color: #fbfbfb; 
+                       --bs-table-accent-bg: #fbfbfb;
+                }
+                
+            } 
+            &:nth-of-type(odd) {
+                td {
+                    background-color: #fff;
+                        --bs-table-accent-bg: #FFFFFF;
+                }
+                
+            }    
+        }
+    }
+}
+
+.table_w-200 {
+    width: 200px;
+}
+
+.table_w-300 {
+    width: 300px;
+}
+
+.table_w-50 {
+    width: 50px;
+}
+.table_w-25 {
+    width: 25px;
+}
+.table_w-75 {
+    width: 75px;
+}

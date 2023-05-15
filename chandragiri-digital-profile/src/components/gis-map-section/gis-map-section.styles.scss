@@ -1,0 +1,250 @@
+.map__section#gis-map {
+  height: 100%;
+  position: relative;
+  .leaflet_map {
+    background-color: #fafeff !important;
+    height: 100%;
+    width: 100%;
+  }
+  .map-tooltip {
+    background: none !important;
+    border: 0px solid #fff !important;
+    box-shadow: none !important;
+    font-weight: 600;
+  }
+  .leaflet-popup-content {
+    width: fit-content !important;
+  }
+
+  .map-popup {
+    .popup-detail{
+      max-height: 300px;
+      width: 250px;
+      overflow: auto;
+      img {
+        width: 230px;
+        height: auto;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+
+  }
+
+  .layer-checkbox {
+    position: absolute;
+    top: 10px;
+    z-index: 999;
+    padding: 5px 10px 2px;
+    right: 10px;
+    background: #ffffffb0;
+    input {
+      height: 18px;
+      width: 18px;
+      border-radius: 0;
+    }
+    label {
+      padding: 2px 0 0 5px;
+    }
+
+    @media screen and (max-width: 767px) {
+      top: 70px;
+    }
+  }
+
+  .top-search {
+    position: absolute;
+    z-index: 999;
+    top: 10px;
+    left: 20px;
+
+    width: 500px;
+    z-index: 1000;
+    @media screen and (max-width: 767px) {
+      width: 300px;
+    }
+    .search-bar {
+      display: flex;
+      justify-items: center;
+      justify-content: center;
+      .select_block .btn {
+        border-radius: 6px 0px 0px 6px;
+        border: 1px solid #292961 !important;
+        min-width: 140px;
+        max-width: 140px;
+        padding-right: 10px;
+        padding-left: 10px;
+        @media screen and (max-width: 767px) {
+          min-width: 90px;
+          max-width: 90px;
+        }
+        span {
+          width: 102px;
+          overflow: hidden;
+          @media screen and (max-width: 767px) {
+            width: 75px;
+          }
+        }
+      }
+
+      .react-autosuggest__container {
+        position: relative;
+        width: 80%;
+        .auto-suggest-input {
+          border-radius: 0;
+          box-shadow: none;
+          border: 1px solid #292961;
+          &:focus {
+            border: 1px solid #292961;
+          }
+        }
+      }
+
+      .search-btn {
+        border-radius: 0px;
+        border: 1px solid #292961;
+        border-radius: 0px 6px 6px 0px;
+        padding: 5px 8px;
+      }
+
+      .react-autosuggest__input {
+        width: 240px;
+        height: 30px;
+        padding: 10px 20px;
+        font-family: Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+      }
+
+      .react-autosuggest__input--focused {
+        outline: none;
+      }
+
+      .react-autosuggest__input--open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .react-autosuggest__suggestions-container {
+        display: none;
+      }
+
+      .react-autosuggest__suggestions-container--open {
+        display: block;
+        position: absolute;
+        top: 40px;
+        width: 280px;
+        border: 1px solid #aaa;
+        background-color: #fff;
+        font-family: Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        z-index: 2;
+      }
+
+      .react-autosuggest__suggestions-list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      .react-autosuggest__suggestion {
+        cursor: pointer;
+        padding: 10px 20px;
+      }
+
+      .react-autosuggest__suggestion--highlighted {
+        background-color: #ddd;
+      }
+
+      .footer {
+        margin: 9px 20px;
+        font-size: 12px;
+        color: #777;
+      }
+    }
+    .search-clear {
+      position: absolute;
+      right: 0;
+      font-weight: 500;
+      font-size: 12px;
+      text-decoration: underline;
+      cursor: pointer;
+      width: 40px;
+      background: #f2efe999;
+      text-align: center;
+    }
+  }
+
+  .routing-form {
+    position: absolute;
+    top: 50px;
+    width: 200px;
+    z-index: 999;
+    padding: 5px 10px 2px;
+    right: 10px;
+    background: #ffffffb0;
+    @media screen and (max-width: 767px) {
+      top: 110px;
+    }
+    .routing-header {
+      font-weight: 500;
+      border-bottom: 1.5px solid #aaa9ab;
+      .toggle {
+        float: right;
+        padding: 2px 5px;
+      }
+    }
+    .routing-body {
+      display: block;
+      transition: 0.5s ease-in-out 0s;
+      -webkit-transition: 0.5s ease-in-out 0s;
+
+      &.hide {
+        height: 0;
+        overflow: hidden;
+
+        transition: 0.5s ease-in-out 0s;
+        -webkit-transition: 0.5s ease-in-out 0s;
+      }
+
+      input {
+        height: 35px;
+        border-radius: 0;
+      }
+      label {
+        padding: 5px 0 0 5px;
+        margin-bottom: 2px;
+        &.distance {
+          font-weight: 500;
+          span {
+            font-weight: 400;
+            padding-left: 5px;
+          }
+        }
+      }
+      small {
+        cursor: pointer;
+        &.active {
+          color: #292961 !important;
+          text-decoration: underline;
+        }
+      }
+    }
+    .btn-section {
+      margin-bottom: 5px;
+      button {
+        margin-right: 5px;
+      }
+    }
+  }
+}

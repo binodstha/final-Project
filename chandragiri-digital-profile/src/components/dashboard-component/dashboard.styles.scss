@@ -1,0 +1,72 @@
+@import "../../styles/App.scss";
+@import 'leaflet/dist/leaflet.css';
+
+.dashboard-status {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $white;
+  padding: 22px 40px;
+  margin-bottom: 15px;
+  &-block {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 10px;
+    border-right: 1px solid $border-color;
+    h5 {
+      font-size: $font-xl;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    p {
+      color: $font-color;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+    @media screen and (max-width: 991px) {
+      width: 33.33%;
+      margin: 10px 0;
+    }
+    @media screen and (max-width: 567px) {
+      width: 50%;
+      h5 {
+        font-size: $font-lg;
+      }
+      p {
+        font-size: $font-sm;
+      }
+    }
+    @media screen and (max-width: 430px) {
+      width: 100%;
+      border: 0;
+    }
+  }
+}
+
+.map__section#map {
+  height: calc(100vh - 215px);
+  position: relative;
+  .leaflet_map {
+    background-color: #fafeff !important;
+    height: 100%;
+    width: 100%;
+  }
+  .layer-checkbox {
+    position: absolute;
+    top: 10px;
+    z-index: 500;
+    padding: 5px 10px 2px;
+    left: 10px;
+    background: #ffffffd9;
+    input {
+      height: 18px;
+      width: 18px;
+      border-radius: 0;
+    }
+    label {
+      padding: 2px 0 0 5px;
+    }
+  }
+}
+
+

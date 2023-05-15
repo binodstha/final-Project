@@ -1,0 +1,4 @@
+export const ProfileActionTypes = {
+  SET_USER_PROFILE: "SET_USER_PROFILE",
+  SET_USER_LOGGED_IN : "SET_USER_LOGGED_IN"
+}

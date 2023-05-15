@@ -1,0 +1,63 @@
+.btn {
+    @include button-primary;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: #8f979d;
+        color: $white;
+    }
+    &:focus:hover {
+        background-color: #6c757d;
+    }
+}
+
+.btn-sm {
+    height: 28px;
+    padding: 3px 10px;
+}
+
+.btn-info {
+    background-color: $abstract;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: #3d78d9;
+        color: $white;
+    }
+    &:focus:hover {
+        background-color: $abstract;
+    }
+}
+
+.btn-success {
+    background-color: #008D61;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: #40CD6D;
+        color: $white;
+    }
+    &:focus:hover {
+        background-color: #008D61;
+    }
+}
+
+.btn-warning {
+    color: $black;
+    background-color: $warning;
+    border-color: $warning;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $warning-hover;
+    }
+    &:focus:hover {
+        background-color: $warning-hover;
+    }
+}

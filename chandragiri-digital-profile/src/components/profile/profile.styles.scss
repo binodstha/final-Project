@@ -1,0 +1,91 @@
+@import "../../styles/App.scss";
+
+.profile-canvas {
+  border: 0;
+  .offcanvas {
+    &-header {
+      background-color: #f8f8f8;
+      padding: 20px 30px;
+    }
+    &-title {
+      font-size: $font-title;
+    }
+    &-body {
+      padding: 30px;
+      position: relative;
+      // & > .btn {
+      //   position: absolute;
+      //   bottom: 30px;
+      //   width: 340px !important;
+      // }
+    }
+  }
+  .profile-name {
+    margin-bottom: 30px;
+    h2.name {
+      font-size: $font-xl;
+      margin-right: 16px;
+    }
+    .btn {
+      background-color: transparent;
+      color: $abstract;
+      padding: 0;
+      height: auto;
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+  .btns-group {
+    display: flex;
+    justify-content: center;
+    .btn {
+      font-size: $font-sm;
+      height: 44px;
+      padding: 10px 20px;
+      background-color: $abstract;
+      border-radius: $card-radius;
+      &:first-child {
+        margin-right: 12px;
+        background-color: #44b5c8;
+      }
+    }
+  }
+  .profile-img {
+    height: 108px;
+    width: 108px;
+    margin: 0 auto 22px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .profile-canvas-edit {
+    margin-bottom: 50px;
+  }
+  .disable{
+    pointer-events:none;
+    text-decoration: none
+  }
+  .profile-canvas-detail {
+    margin-bottom: 45px;
+    .list-group {
+      padding: 12px 0;
+      i {
+        margin-right: 20px;
+        color: $abstract;
+      }
+      &-item {
+        border-bottom: 1px solid $border-color;
+        font-size: $font-sm;
+        &:last-child {
+          border-bottom: 1px solid $border-color;
+        }
+      }
+      .house-num {
+        font-weight: 500;
+      }
+    }
+  }
+}

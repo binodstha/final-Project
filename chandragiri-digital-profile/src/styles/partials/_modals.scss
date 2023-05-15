@@ -1,0 +1,186 @@
+.theme-modal {
+    .modal {
+        &-content {
+            max-height: 70vh;
+            padding: 40px;
+            border: 0;
+            border-radius: 6px;
+        }
+        &-header {
+            padding: 0;
+            border: 0;
+            margin-bottom: 25px;
+        }
+        &-title {
+            font-weight: 500;
+            font-size: $font-xl + 2;
+            text-transform: uppercase;
+            color: $font-color;
+        }
+        &-body {
+            padding: 0;
+            @include scrollbar;
+
+            &.bordered {
+                padding: 20px;
+                border: 1px solid $border-color;
+                margin-bottom: 20px;
+                border-radius: $img-radius;
+            }
+        }
+        &-form {
+            height: 80%;
+            overflow: auto;
+            label {
+                color: $font-color;
+                font-weight: 500;
+            }
+            textarea {
+                resize: none;
+                min-height: 257px;
+            }
+            .btn {
+                // text-transform: uppercase;
+                font-size: $font-xl;
+            }
+            &_inner {
+                margin-top: 35px;
+                padding: 30px;
+                border: 1px solid $border-color;
+                border-radius: $card-radius;
+                .modal-title {
+                    margin-bottom: 36px;
+                }
+            }
+        }
+        &-information {
+            h5 {
+                font-size: $font-base;
+                font-weight: 500;
+                margin-right: 8px;
+            }
+            p {
+                font-weight: 400;
+            }
+            span {
+                font-size: $font-sm;
+                color: $secondary;
+                width: 100%;
+                display: block;
+                word-break: break-all;
+            }
+        }
+        &-footer {
+            border: 0;
+            padding-bottom: 0;
+        }
+    }
+    &.modal {
+        .btn-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 20px;
+            height: 20px;
+            padding: 0 !important;
+        }
+        .modal-50w {
+            max-width: 50%;
+        }
+        .modal-75w {
+            max-width: 75%;
+        }
+        @media screen and (max-width: 991px) {
+            .modal-50w {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            .modal-75w {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+        }
+    }
+    &.modal-content-add {
+        .modal-content {
+            min-height: 600px;
+        }
+    }
+}
+
+.profile-modal  {
+    .modal {
+        &-content {
+          padding: 30px;
+          position: relative;
+        }
+        &-header {
+            padding: 0 10px 18px;
+            font-size: $font-xl;
+            margin-bottom: 30px;
+        }
+        &-title {
+            width: 100%;
+            text-align: center;
+        }
+        &-dialog {
+            @media screen and (min-width: 576px) {
+                max-width: 540px;
+            }
+
+        }
+        &-body {
+            margin-bottom: 30px;
+            padding: 0;
+            .profile-img {
+                height: 83px;
+                width: 83px;
+                border-radius: 100%;
+                overflow: hidden;
+                margin: 0 auto;
+                margin-bottom: 30px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .auth-form {
+                .input-group {
+                    margin-bottom: 40px;
+                }
+            }
+            .verification-code {
+                input {
+                    height: 50px;
+                    width: 50px !important;
+                    font-size: $font-xl;
+                }
+            }
+            .verfication-text {
+                font-size: $font-sm;
+                margin-bottom: 30px;
+            }
+        }
+        &-footer {
+            border: 0;
+            padding: 0;
+            .btn {
+                margin: 0;
+                font-size: $font-xl;
+                font-weight: 500;
+            }
+        }
+    }
+    .btn-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.btn-close {
+    &:focus {
+        box-shadow: none !important;
+    }
+}

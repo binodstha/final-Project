@@ -1,0 +1,68 @@
+.top-nav {
+    .navbar {
+        margin-top: 5px;
+        @media screen and (max-width: 991px) {
+            position: absolute;
+            left: 0;
+            top: 69px;
+            right: 0;
+            background: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 3px 6px #0000001c;
+        }
+        @media screen and (max-width: 991px) {
+            display: none;
+            transition: 0.3s all ease-in-out;
+            &.mobile-show {
+                display: block;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+    }
+    .nav {
+        &-link {
+            margin-right: 30px;
+            font-weight: 500;
+            color: $font-color !important;
+            padding: 0 !important;
+            position: relative;
+            font-size: $font-lg;
+            &.active,
+            &:hover {
+                color: $primary !important;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -22px;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $primary;
+                    left: 0;
+                    right: 0;
+                    @media screen and (max-width: 991px) {
+                        bottom: -10px;
+                    }
+                }
+            }
+            @media screen and (max-width: 1085px) {
+                margin-right: 20px;
+                font-size: 14px;
+            }
+            @media screen and (max-width: 991px) {
+                white-space: nowrap;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            flex-wrap: wrap;
+        }
+    }
+    .menu-button {
+        padding: 7px 12px;;
+        height: auto;
+        display: none;
+        @media screen and (max-width: 991px) {
+            display: block;
+        }
+    }
+
+}

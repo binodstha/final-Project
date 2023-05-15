@@ -1,0 +1,208 @@
+@import "../../styles/App.scss";
+
+.auth-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 20px;
+  .left-section {
+    width: 225px;
+    height: 400px;
+    display: flex;
+    padding: 10px 0 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    // background-color: $primary;
+    background-image: url("../../assets/images/form-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    img {
+      margin: 0 auto 15px;
+    }
+    p {
+      text-transform: uppercase;
+      font-size: 22px;
+      font-weight: 500;
+    }
+    @media screen and(max-width: 567px) {
+      width: 90%;
+      height: 100px;
+      padding: 10px;
+      & > div {
+        display: flex;
+        align-items: center;
+      }
+      img {
+        margin: 0 10px 0 0;
+        height: 50px;
+      }
+    }
+  }
+  .form {
+    background-color: $white;
+    padding: 50px 38px;
+    max-width: 554px;
+    width: 100%;
+    border-bottom-right-radius: $card-radius;
+    border-bottom-left-radius: $card-radius;
+    .btn {
+      width: 100%;
+      margin-top: 30px;
+      text-transform: uppercase;
+      font-size: $font-xl;
+      font-weight: 500;
+      @media screen and(max-width: 567px) {
+        font-size: $font-lg;
+      }
+    }
+    h5 {
+      text-align: center;
+      font-size: $font-sm;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    &-head {
+      margin-bottom: 50px;
+      h2 {
+        font-size: $font-title + 4;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      p {
+        font-weight: 300;
+        color: $secondary;
+        line-height: 26px;
+      }
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+  }
+  .input-group {
+    border-bottom: 1px solid $border-color;
+    flex-wrap: nowrap;
+    &-text {
+      background-color: transparent;
+      border: 0;
+      padding: 0;
+      color: $secondary;
+      &:first-child {
+        margin-right: 14px;
+      }
+    }
+  }
+  .form-floating {
+    flex-grow: 1;
+    .form-control {
+      border: 0;
+      padding-left: 0;
+      &:focus {
+        box-shadow: none;
+      }
+      &.floatingInput {
+        &:focus {
+          & ~ label {
+            color: $primary;
+            font-size: $font-base;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    label {
+      color: $secondary;
+      font-size: $font-base;
+      padding-left: 0;
+    }
+  }
+  .forgot-link {
+    text-align: right;
+    margin-top: 45px;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @media screen and(max-width: 567px) {
+      flex-direction: column;
+    }
+  }
+}
+.errMsg {
+  color: red;
+}
+
+.password-show {
+  padding: 0 !important;
+  background: transparent !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+.verification-code {
+  margin-bottom: 50px;
+  > div {
+    display: flex;
+  }
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    height: 60px;
+    width: 60px !important;
+    margin-right: 12px;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    &:focus,
+    &:active {
+      box-shadow: none;
+      border: 1px solid $primary;
+    }
+    &:focus-visible {
+      outline: 0;
+    }
+    @media screen and(max-width: 380px) {
+      height: 45px;
+      width: 45px;
+      font-size: 22px;
+    }
+  }
+
+  @media screen and(max-width: 380px) {
+    margin-bottom: 20px;
+  }
+}
+
+.code-resend {
+  margin-top: 30px;
+  color: $secondary;
+  text-decoration: underline;
+  display: inline-block;
+  cursor: pointer;
+}
+.disable{
+  pointer-events:none;
+  text-decoration: none
+}
+
+.home-link {
+  position: absolute;
+  bottom: 20px;
+  color: #fff;
+  text-decoration: underline;
+  &:hover {
+    color: #fff;
+  }
+}

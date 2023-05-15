@@ -1,0 +1,38 @@
+.theme-accordion {
+    .accordion {
+        &-item {
+            position: relative;
+            border-radius: 5px;
+        }
+        &-button {
+            background-color: transparent;
+            color: $font-color;
+            font-size: $font-xl;
+            font-weight: 500;
+            // &::after {
+            //     display: none;
+            // }
+            &:focus {
+                box-shadow: none;
+            }
+        }
+        &-header {
+            background-color: #F8F8F8;
+            border-top-right-radius: $card-radius;
+            border-top-left-radius: $card-radius;
+        }
+        .delete-feild {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            height: auto;
+            z-index: 3;
+            padding: 3px 10px;
+            border-radius: 100%;
+            background-color: #dc3545 !important;
+        }
+        &-body {
+            padding: 30px;
+        }
+    }
+}

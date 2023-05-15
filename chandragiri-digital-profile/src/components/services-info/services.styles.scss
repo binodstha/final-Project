@@ -1,0 +1,18 @@
+@import '../../styles/App.scss';
+
+.service-Modal{
+    height: 250;
+    width: auto
+
+}
+.require:after {
+    content: ' *';
+    color: #d00;
+}
+
+.details {
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
