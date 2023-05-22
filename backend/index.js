@@ -48,22 +48,21 @@ app.get("/books", (req, res) => {
 });
 
 app.post("/admin/auth/sign-in", (req, res) => {
-  console.log(req)
-  const query =
-    "SELECT * FROM user WHERE username = ? ";
+  console.log(req);
+  const query = "SELECT * FROM user WHERE username = ? ";
 
   const values = [req.body.username];
 
   db.query(query, [values], (err, data) => {
-    if (err) return res.send(err);
+    if (err) return res.send(err.code);
     return res.json(data);
   });
 });
 
 app.post("/admin/auth/sign-up", (req, res) => {
   const query =
-    "INSERT INTO user(`username`, `email`, `firstname`, `lastname`, password) VALUES (?)";
-  const hashPassword = bcrypt.hashSync(req.body.password);
+    "INSERT INTO user(`username`, `email`, `firstname`, `lastname`, `password`) VALUES (?)";
+  const hashPassword = bcrypt.hashSync(req.body.password, 12);
 
   const values = [
     req.body.username,
@@ -74,10 +73,21 @@ app.post("/admin/auth/sign-up", (req, res) => {
   ];
 
   db.query(query, [values], (err, data) => {
-    if (err) return res.send(err);
-    return res.json(data);
+    if (err) {
+      if (err.code === 'ER_DUP_ENTRY') {
+        const errorMessage = 'Username or email already exists.';
+        return res.status(409).json({ error: errorMessage });
+      } else {
+        const errorMessage = 'Failed to create user.';
+        return res.status(500).json({ error: errorMessage });
+      }
+    }
+
+    // User created successfully
+    return res.status(201).json({ message: 'User created successfully.' });
   });
 });
+
 
 app.post("/books", (req, res) => {
   const q = "INSERT INTO books(`title`, `desc`, `price`, `cover`) VALUES (?)";
@@ -90,7 +100,6 @@ app.post("/books", (req, res) => {
   ];
 
   db.query(q, [values], (err, data) => {
-    console.log(err);
     if (err) return res.send(err);
     return res.json(data);
   });

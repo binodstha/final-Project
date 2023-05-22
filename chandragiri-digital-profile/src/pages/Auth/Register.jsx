@@ -18,7 +18,7 @@ import EyeShow from "../../assets/images/icons/eye-show.svg";
 import EyeHide from "../../assets/images/icons/eye-hide.svg";
 import agent from "../../agent";
 import ResetCode from "./ResetCode";
-
+import axios from "axios";
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -52,39 +52,50 @@ class Register extends React.Component {
         errMsg: "",
         isError: false,
       });
-      if (
-        this.state.name !== "" &&
-        this.state.houseNo !== "" &&
-        this.state.mobileNo !== "" &&
-        this.state.password !== ""
-      ) {
-        const body = `name=${this.state.name}&house_number=${this.state.houseNo}&mobile_number=${this.state.mobileNo}&password=${this.state.password}&password_confirmation=${this.state.rePassword}&clientId=${process.env.REACT_APP_PRIVATE_CLIENT_ID}&clientSecret=${process.env.REACT_APP_PRIVATE_CLIENT_SECRET}&grantType=${process.env.REACT_APP_PRIVATE_GRANT_TYPE}`;
-        agent.AuthUser.register(body)
-          .then((res) => {
-            if (res.status === 200) {
-              window.localStorage.setItem(
-                "authToken",
-                JSON.stringify(res.body.data.auth_token)
-              );
-              this.setState({
-                isRegSuccess: true,
-                expired_time: res.body.data.otp_expiry_time,
-              });
-            }
-          })
-          .catch((err) => {
-            this.setState({
-              isError: true,
-              errMsg: err.response.body.errors,
-            });
-            setTimeout(() => {
-              this.setState({
-                isError: false,
-                errMsg: [],
-              });
-            }, 5000);
-          });
-      }
+      // if (
+      //   this.state.name !== "" &&
+      //   this.state.houseNo !== "" &&
+      //   this.state.mobileNo !== "" &&
+      //   this.state.password !== ""
+      // ) {
+        // const body = `name=${this.state.name}&house_number=${this.state.houseNo}&mobile_number=${this.state.mobileNo}&password=${this.state.password}&password_confirmation=${this.state.rePassword}&clientId=${process.env.REACT_APP_PRIVATE_CLIENT_ID}&clientSecret=${process.env.REACT_APP_PRIVATE_CLIENT_SECRET}&grantType=${process.env.REACT_APP_PRIVATE_GRANT_TYPE}`;
+        
+
+        try {
+          const res= await axios.post("   http://localhost:8800/admin/auth/sign-up", this.state);
+          console.log(res)
+          // navigate("/");
+        } catch (err) {
+          console.log(err);
+          // setError(true)
+        }
+        
+        // agent.AuthUser.register(body)
+        //   .then((res) => {
+        //     if (res.status === 200) {
+        //       window.localStorage.setItem(
+        //         "authToken",
+        //         JSON.stringify(res.body.data.auth_token)
+        //       );
+        //       this.setState({
+        //         isRegSuccess: true,
+        //         expired_time: res.body.data.otp_expiry_time,
+        //       });
+        //     }
+        //   })
+        //   .catch((err) => {
+        //     this.setState({
+        //       isError: true,
+        //       errMsg: err.response.body.errors,
+        //     });
+        //     setTimeout(() => {
+        //       this.setState({
+        //         isError: false,
+        //         errMsg: [],
+        //       });
+        //     }, 5000);
+        //   });
+      // }
     }
   };
 
@@ -100,7 +111,7 @@ class Register extends React.Component {
           <div className="left-section">
             <div>
               <Link to={"/"}>
-                <Image src={LogoIcon} />
+                <Image src={LogoIcon} height={"50px"} width={"100px"} />
               </Link>
               <p>REGISTER</p>
             </div>
